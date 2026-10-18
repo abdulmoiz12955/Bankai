@@ -16,6 +16,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Abilities;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.TickEvent;
@@ -40,7 +41,11 @@ public final class PowerEvents {
     private PowerEvents() {}
 
     private static boolean hasSword(ServerPlayer p) {
-        return p.getInventory().contains(s -> s.getItem() instanceof AbsoluteCutterItem);
+        var inv = p.getInventory();
+        for (ItemStack s : inv.items) if (s.getItem() instanceof AbsoluteCutterItem) return true;
+        for (ItemStack s : inv.offhand) if (s.getItem() instanceof AbsoluteCutterItem) return true;
+        for (ItemStack s : inv.armor) if (s.getItem() instanceof AbsoluteCutterItem) return true;
+        return false;
     }
 
     // ------------------------------------------------------------------ flight + speed (inventory)
