@@ -64,6 +64,14 @@ public final class CutterConfig {
         public final ForgeConfigSpec.IntValue terrainMaxBlocks;
         public final ForgeConfigSpec.DoubleValue terrainMaxHardness;
 
+        public final ForgeConfigSpec.BooleanValue flightEnabled;
+        public final ForgeConfigSpec.DoubleValue flightSpeed;
+        public final ForgeConfigSpec.BooleanValue invincibleInInventory;
+        public final ForgeConfigSpec.BooleanValue speedInInventory;
+        public final ForgeConfigSpec.BooleanValue dodgeEnabled;
+        public final ForgeConfigSpec.IntValue dodgeCooldownTicks;
+        public final ForgeConfigSpec.DoubleValue dodgeDistance;
+
         Common(ForgeConfigSpec.Builder b) {
             b.push("combat");
             baseDamage = b.comment("Base attack damage of a normal hit (health points, 2 = 1 heart). Default 50 = 25 hearts.")
@@ -99,12 +107,12 @@ public final class CutterConfig {
             b.pop();
 
             b.push("getsuga_terrain");
-            terrainDestruction = b.comment("Allow the Getsuga to destroy blocks along its path and at impact. DISABLED by default.")
-                    .define("terrainDestruction", false);
-            impactRadius = b.comment("Sphere radius (blocks) destroyed at impact when terrainDestruction is on.")
+            terrainDestruction = b.comment("The Getsuga destroys blocks along its path and at impact (up to maxBlocksDestroyed).")
+                    .define("destroyBlocks", true);
+            impactRadius = b.comment("Sphere radius (blocks) destroyed at impact when destroyBlocks is on.")
                     .defineInRange("impactRadius", 3.0D, 0.0D, 8.0D);
             terrainBlockBudget = b.comment("Hard cap on blocks a single Getsuga may destroy in total.")
-                    .defineInRange("terrainBlockBudget", 200, 0, 4096);
+                    .defineInRange("maxBlocksDestroyed", 20, 0, 4096);
             b.pop();
 
             b.push("cutting");
@@ -125,6 +133,27 @@ public final class CutterConfig {
             terrainMaxBlocks = b.comment("Maximum blocks per terrain-mode swing.").defineInRange("terrainMaxBlocks", 24, 1, 256);
             terrainMaxHardness = b.comment("Blocks harder than this (obsidian = 50) are never cut. Unbreakable blocks are never cut.")
                     .defineInRange("terrainMaxHardness", 10.0D, 0.0D, 100.0D);
+            b.pop();
+
+            b.push("inventory_powers");
+            flightEnabled = b.comment("While the sword is ANYWHERE in your inventory you can fly (double-tap jump). Survival/adventure only.")
+                    .define("flightEnabled", true);
+            flightSpeed = b.comment("Flying speed value. Vanilla creative = 0.05. Sprinting while flying doubles it.",
+                            "0.3 is roughly 65 blocks/s (130 sprinting), far faster than elytra. Above ~0.45 the server may reject the movement ('moved too quickly').")
+                    .defineInRange("flightSpeed", 0.3D, 0.05D, 0.6D);
+            invincibleInInventory = b.comment("Take no damage while the sword is in your inventory (void and /kill still work so you can't get stuck).")
+                    .define("invincibleInInventory", true);
+            speedInInventory = b.comment("Speed II effect for as long as the sword is in your inventory.")
+                    .define("speedInInventory", true);
+            b.pop();
+
+            b.push("hand_powers");
+            dodgeEnabled = b.comment("While HOLDING the sword in your main hand, incoming attacks teleport you away instead of hitting you.")
+                    .define("dodgeEnabled", true);
+            dodgeCooldownTicks = b.comment("Minimum ticks between dodges (10 = half a second).")
+                    .defineInRange("dodgeCooldownTicks", 10, 0, 200);
+            dodgeDistance = b.comment("How far (blocks) a dodge teleports you.")
+                    .defineInRange("dodgeDistance", 5.0D, 2.0D, 16.0D);
             b.pop();
         }
     }
