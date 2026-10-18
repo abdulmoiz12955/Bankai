@@ -1,0 +1,58 @@
+{
+  "sword_hum": {
+    "subtitle": "subtitles.absolute_cutter.sword_hum",
+    "sounds": [
+      {
+        "name": "absolute_cutter:sword_hum"
+      }
+    ]
+  },
+  "slash": {
+    "subtitle": "subtitles.absolute_cutter.slash",
+    "sounds": [
+      {
+        "name": "absolute_cutter:slash"
+      }
+    ]
+  },
+  "charge": {
+    "subtitle": "subtitles.absolute_cutter.charge",
+    "sounds": [
+      {
+        "name": "absolute_cutter:charge"
+      }
+    ]
+  },
+  "charge_complete": {
+    "subtitle": "subtitles.absolute_cutter.charge_complete",
+    "sounds": [
+      {
+        "name": "absolute_cutter:charge_complete"
+      }
+    ]
+  },
+  "getsuga_launch": {
+    "subtitle": "subtitles.absolute_cutter.getsuga_launch",
+    "sounds": [
+      {
+        "name": "absolute_cutter:getsuga_launch"
+      }
+    ]
+  },
+  "getsuga_travel": {
+    "subtitle": "subtitles.absolute_cutter.getsuga_travel",
+    "sounds": [
+      {
+        "name": "absolute_cutter:getsuga_travel"
+      }
+    ]
+  },
+  "getsuga_impact": {
+    "subtitle": "subtitles.absolute_cutter.getsuga_impact",
+    "sounds": [
+      {
+        "name": "absolute_cutter:getsuga_impact"
+      }
+    ]
+  }
+}

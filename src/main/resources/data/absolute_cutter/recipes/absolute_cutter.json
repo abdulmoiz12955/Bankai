@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [" N ", "NSN", " B "],
+  "key": {
+    "N": {"item": "minecraft:nether_star"},
+    "S": {"item": "minecraft:netherite_sword"},
+    "B": {"item": "minecraft:netherite_block"}
+  },
+  "result": {"item": "absolute_cutter:absolute_cutter"}
+}

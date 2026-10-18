@@ -1,0 +1,18 @@
+{
+  "item.absolute_cutter.absolute_cutter": "Absolute Cutter",
+  "itemGroup.absolute_cutter": "Absolute Cutter",
+  "entity.absolute_cutter.getsuga": "Getsuga",
+  "key.absolute_cutter.terrain_mode": "Terrain Cutting Modifier (hold + swing)",
+  "key.categories.absolute_cutter": "Absolute Cutter",
+  "message.absolute_cutter.terrain_mode": "TERRAIN CUTTING ARMED",
+  "tooltip.absolute_cutter.line1": "A blade that divides the world itself.",
+  "tooltip.absolute_cutter.line2": "Swing: cuts trees, leaves and plants.",
+  "tooltip.absolute_cutter.line3": "Hold right-click %s s: fire Getsuga.",
+  "subtitles.absolute_cutter.sword_hum": "Absolute Cutter hums",
+  "subtitles.absolute_cutter.slash": "Absolute Cutter slashes",
+  "subtitles.absolute_cutter.charge": "Getsuga charges",
+  "subtitles.absolute_cutter.charge_complete": "Getsuga fully charged",
+  "subtitles.absolute_cutter.getsuga_launch": "Getsuga fired",
+  "subtitles.absolute_cutter.getsuga_travel": "Getsuga rushes by",
+  "subtitles.absolute_cutter.getsuga_impact": "Getsuga impacts"
+}
